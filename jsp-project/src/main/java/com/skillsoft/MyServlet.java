@@ -10,7 +10,7 @@ public class MyServlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Hello! I am a servlet. I am herr to serve.";
+        message = "Hello! I am a servlet. I am here to serve.";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
