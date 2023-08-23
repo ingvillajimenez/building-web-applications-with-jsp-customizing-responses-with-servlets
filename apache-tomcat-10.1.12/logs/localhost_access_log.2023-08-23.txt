@@ -9,3 +9,6 @@
 0:0:0:0:0:0:0:1 - - [23/Aug/2023:16:29:46 -0500] "GET /jsp-project/ HTTP/1.1" 200 979
 0:0:0:0:0:0:0:1 - - [23/Aug/2023:16:32:14 -0500] "GET /jsp-project/register?name=William&email=william%40gmail.com&membership=regular&subs=news HTTP/1.1" 200 119
 0:0:0:0:0:0:0:1 - - [23/Aug/2023:16:37:45 -0500] "GET /jsp-project/ HTTP/1.1" 200 979
+0:0:0:0:0:0:0:1 - - [23/Aug/2023:18:48:20 -0500] "GET /jsp-project/ HTTP/1.1" 200 254
+0:0:0:0:0:0:0:1 - - [23/Aug/2023:18:48:20 -0500] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [23/Aug/2023:18:49:55 -0500] "GET /jsp-project/bookinfo?bname=Brave+New+World&author=Aldous+Huxley HTTP/1.1" 200 90
