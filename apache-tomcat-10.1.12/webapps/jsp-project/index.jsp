@@ -1,13 +1,20 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-<body>
-    <form action="bookinfo" method="get">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <br>
+        <h2 align="center">Sign in</h2>
 
-        Enter book name : <input type="text" name="bname"><br><br>
+        <form action="signin" align="center">
+            Username: <input type="text" name="uname"> <br><br>
+            Password: <input type="text" name="pwd"> <br><br>
+            <br><br>
+            <input type="submit" value="Sign In">
+            <input type="reset">
+        </form>
 
-        Enter author name : <input type="text" name="author"><br><br>
-
-        <input type="submit">
-
-    </form>
-</body>
+    </body>
 </html>

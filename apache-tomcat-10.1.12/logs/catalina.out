@@ -353,3 +353,348 @@
 23-Aug-2023 20:11:57.111 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/jsp-project]
 23-Aug-2023 20:11:57.143 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war]
 23-Aug-2023 20:11:57.207 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war] has finished in [63] ms
+24-Aug-2023 11:23:41.971 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/jsp-project]
+24-Aug-2023 11:23:42.004 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war]
+24-Aug-2023 11:23:42.082 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war] has finished in [77] ms
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/jsp/signinconfirm.jsp]
+The method geSession() is undefined for the type HttpServletRequest
+7:         <h3> Welcome aboard! </h3><br>
+8:         <b>Request username: </b> <%= request.getAttribute("username") %>
+9:         <br>
+10:         <b>Session username: </b> <%= request.geSession().getAttribute("username)" %>
+11:         <br>
+12:         <b>ServletContext username: </b> <%= request.getServletContext().getAttribute("username") %>
+13:         <br><br>
+
+
+An error occurred at line: [10] in the jsp file: [/jsp/signinconfirm.jsp]
+Syntax error, insert ")" to complete Expression
+7:         <h3> Welcome aboard! </h3><br>
+8:         <b>Request username: </b> <%= request.getAttribute("username") %>
+9:         <br>
+10:         <b>Session username: </b> <%= request.geSession().getAttribute("username)" %>
+11:         <br>
+12:         <b>ServletContext username: </b> <%= request.getServletContext().getAttribute("username") %>
+13:         <br><br>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:513)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:408)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at com.skillsoft.SignInServlet.doGet(SignInServlet.java:32)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:676)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/jsp/signinconfirm.jsp]
+The method geSession() is undefined for the type HttpServletRequest
+7:         <h3> Welcome aboard! </h3><br>
+8:         <b>Request username: </b> <%= request.getAttribute("username") %>
+9:         <br>
+10:         <b>Session username: </b> <%= request.geSession().getAttribute("username)" %>
+11:         <br>
+12:         <b>ServletContext username: </b> <%= request.getServletContext().getAttribute("username") %>
+13:         <br><br>
+
+
+An error occurred at line: [10] in the jsp file: [/jsp/signinconfirm.jsp]
+Syntax error, insert ")" to complete Expression
+7:         <h3> Welcome aboard! </h3><br>
+8:         <b>Request username: </b> <%= request.getAttribute("username") %>
+9:         <br>
+10:         <b>Session username: </b> <%= request.geSession().getAttribute("username)" %>
+11:         <br>
+12:         <b>ServletContext username: </b> <%= request.getServletContext().getAttribute("username") %>
+13:         <br><br>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:513)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:408)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at com.skillsoft.SignInServlet.doGet(SignInServlet.java:32)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:676)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+org.apache.jasper.JasperException: org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.jsp.signinconfirm_jsp
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:578)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:422)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:408)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at com.skillsoft.SignInServlet.doGet(SignInServlet.java:32)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:676)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.jsp.signinconfirm_jsp
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:194)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:410)
+	... 37 more
+Caused by: java.lang.ClassNotFoundException: org.apache.jsp.jsp.signinconfirm_jsp
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:436)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+	at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:151)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:189)
+	... 38 more
+24-Aug-2023 11:28:42.218 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/jsp-project]
+24-Aug-2023 11:28:42.231 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war]
+24-Aug-2023 11:28:42.266 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war] has finished in [35] ms
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/jsp/signinconfirm.jsp]
+The method geSession() is undefined for the type HttpServletRequest
+7:         <h3> Welcome aboard! </h3><br>
+8:         <b>Request username: </b> <%= request.getAttribute("username") %>
+9:         <br>
+10:         <b>Session username: </b> <%= request.geSession().getAttribute("username") %>
+11:         <br>
+12:         <b>ServletContext username: </b> <%= request.getServletContext().getAttribute("username") %>
+13:         <br><br>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:513)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:408)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at com.skillsoft.SignInServlet.doGet(SignInServlet.java:32)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:676)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+24-Aug-2023 11:29:52.295 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/jsp-project]
+24-Aug-2023 11:29:52.305 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war]
+24-Aug-2023 11:29:52.337 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war] has finished in [32] ms
+24-Aug-2023 12:09:58.511 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.12
+24-Aug-2023 12:09:58.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 8 2023 19:16:13 UTC
+24-Aug-2023 12:09:58.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.12.0
+24-Aug-2023 12:09:58.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+24-Aug-2023 12:09:58.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.16
+24-Aug-2023 12:09:58.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+24-Aug-2023 12:09:58.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home
+24-Aug-2023 12:09:58.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           13.0.1+9
+24-Aug-2023 12:09:58.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Aug-2023 12:09:58.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 12:09:58.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 12:09:58.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/conf/logging.properties
+24-Aug-2023 12:09:58.580 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Aug-2023 12:09:58.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Aug-2023 12:09:58.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Aug-2023 12:09:58.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+24-Aug-2023 12:09:58.602 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Aug-2023 12:09:58.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Aug-2023 12:09:58.607 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Aug-2023 12:09:58.608 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Aug-2023 12:09:58.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Aug-2023 12:09:58.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 12:09:58.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 12:09:58.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/temp
+24-Aug-2023 12:09:58.632 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/juan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+24-Aug-2023 12:09:58.945 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+24-Aug-2023 12:09:58.990 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [786] milliseconds
+24-Aug-2023 12:09:59.063 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Aug-2023 12:09:59.064 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.12]
+24-Aug-2023 12:09:59.094 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war]
+24-Aug-2023 12:09:59.548 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war] has finished in [454] ms
+24-Aug-2023 12:09:59.549 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/docs]
+24-Aug-2023 12:09:59.578 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/docs] has finished in [29] ms
+24-Aug-2023 12:09:59.578 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/manager]
+24-Aug-2023 12:09:59.627 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/manager] has finished in [49] ms
+24-Aug-2023 12:09:59.627 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/examples]
+24-Aug-2023 12:09:59.944 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/examples] has finished in [316] ms
+24-Aug-2023 12:09:59.944 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/ROOT]
+24-Aug-2023 12:09:59.967 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/ROOT] has finished in [23] ms
+24-Aug-2023 12:09:59.967 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/host-manager]
+24-Aug-2023 12:10:00.033 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/host-manager] has finished in [65] ms
+24-Aug-2023 12:10:00.036 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+24-Aug-2023 12:10:00.060 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1068] milliseconds
+24-Aug-2023 13:18:48.137 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.12
+24-Aug-2023 13:18:48.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 8 2023 19:16:13 UTC
+24-Aug-2023 13:18:48.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.12.0
+24-Aug-2023 13:18:48.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+24-Aug-2023 13:18:48.145 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.16
+24-Aug-2023 13:18:48.146 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+24-Aug-2023 13:18:48.147 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home
+24-Aug-2023 13:18:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           13.0.1+9
+24-Aug-2023 13:18:48.152 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Aug-2023 13:18:48.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 13:18:48.154 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 13:18:48.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/conf/logging.properties
+24-Aug-2023 13:18:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Aug-2023 13:18:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Aug-2023 13:18:48.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Aug-2023 13:18:48.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+24-Aug-2023 13:18:48.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Aug-2023 13:18:48.211 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Aug-2023 13:18:48.212 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Aug-2023 13:18:48.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Aug-2023 13:18:48.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Aug-2023 13:18:48.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 13:18:48.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12
+24-Aug-2023 13:18:48.214 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/temp
+24-Aug-2023 13:18:48.219 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/juan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+24-Aug-2023 13:18:48.873 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+24-Aug-2023 13:18:48.921 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1509] milliseconds
+24-Aug-2023 13:18:49.104 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Aug-2023 13:18:49.105 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.12]
+24-Aug-2023 13:18:49.135 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war]
+24-Aug-2023 13:18:50.010 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/jsp-project.war] has finished in [874] ms
+24-Aug-2023 13:18:50.012 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/docs]
+24-Aug-2023 13:18:50.129 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/docs] has finished in [116] ms
+24-Aug-2023 13:18:50.130 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/manager]
+24-Aug-2023 13:18:50.224 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/manager] has finished in [94] ms
+24-Aug-2023 13:18:50.224 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/examples]
+24-Aug-2023 13:18:50.824 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/examples] has finished in [600] ms
+24-Aug-2023 13:18:50.828 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/ROOT]
+24-Aug-2023 13:18:50.896 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/ROOT] has finished in [70] ms
+24-Aug-2023 13:18:50.896 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/host-manager]
+24-Aug-2023 13:18:50.964 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/juan/code/skillsoft/java-novice-to-javanista/track-3-javanista/building-web-applications-with-jsp-customizing-responses-with-servlets/apache-tomcat-10.1.12/webapps/host-manager] has finished in [68] ms
+24-Aug-2023 13:18:50.971 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+24-Aug-2023 13:18:50.990 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1942] milliseconds
