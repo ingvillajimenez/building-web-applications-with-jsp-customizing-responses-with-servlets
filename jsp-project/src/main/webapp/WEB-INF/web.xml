@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <web-app>
   <display-name>My Own JSP App</display-name>
-
-  <servlet>
-    <servlet-name>bookservlet</servlet-name>
-    <servlet-class>com.skillsoft.BookInfoServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>bookconfirmservlet</servlet-name>
-    <servlet-class>com.skillsoft.SubmissionServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>bookservlet</servlet-name>
-    <url-pattern>/bookinfo</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>bookconfirmservlet</servlet-name>
-    <url-pattern>/booksubmitconfirm</url-pattern>
-  </servlet-mapping>
 </web-app>

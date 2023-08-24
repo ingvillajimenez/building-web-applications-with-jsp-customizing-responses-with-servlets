@@ -4,10 +4,12 @@ import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@WebServlet(urlPatterns = "/bookinfo")
 public class BookInfoServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -22,7 +24,7 @@ public class BookInfoServlet extends HttpServlet {
         req.setAttribute("updatedBName", bName.trim().toUpperCase());
         req.setAttribute("updatedAuthor", author.trim());
 
-        RequestDispatcher rd = req.getRequestDispatcher("booksubmitconfirm");
+        RequestDispatcher rd = req.getRequestDispatcher("/jsp/booksubmitconfirm.jsp");
         rd.forward(req, res);
 
     }
